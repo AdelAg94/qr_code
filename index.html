@@ -4,6 +4,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="Project_Logo_1.png">
 <title>QR | Test</title>
@@ -49,24 +50,41 @@
         body .btn-primary{
             background-color: rgba(37, 9, 102, 0.7) !important;
         }
-
+        #qr-canvas {
+            margin: auto;
+            width: calc(100% - 20px);
+            max-width: 400px;
+            }
     </style>    
    
     <div class="jumbotron bg-secondary text-white">
     <h1 class="text-center">QR | Test</h1>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center">
-                <button class="btn btn-primary" id="server_1">سيرفر ميغا</button>
-                <button class="btn btn-primary" id="server_2">سيرفر زوهو</button>
-            </div>
-        </div>
+
         <br>
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8 text-center">
-            <h5></h5>
+                <div id="container">
+                    <h1>QR Code Scanner</h1>
+                
+                    <a id="btn-scan-qr">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary">Take Picture</button>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                    <canvas hidden="" id="qr-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div id="qr-result" hidden="">
+                        <b>Data:</b> <span id="outputData"></span>
+                    </div>
+                </div>
             </div>
             <div class="col-2"></div>
             </div>
@@ -81,5 +99,6 @@
         </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
+    <script src="js/qr_packed.js"></script>
+    <script src="js/qrCodeReader.js"></script>
 </body>
