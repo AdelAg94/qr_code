@@ -16,9 +16,11 @@ let scanning = false;
 qrcode.callback = res => {
   if (res) {
     outputData.innerText = res;
+    console.log(res)
     scanning = false;
 
     video.srcObject.getTracks().forEach(track => {
+        window.location.hash = res
       track.stop();
     });
 
@@ -59,4 +61,5 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
+$("#btn-scan-qr").trigger('click')
 })
