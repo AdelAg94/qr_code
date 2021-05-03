@@ -1,3 +1,6 @@
+$(document).ready(function(){
+
+
 const qrcode = window.qrcode;
 
 const video = document.createElement("video");
@@ -56,3 +59,4 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
+})
