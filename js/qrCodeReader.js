@@ -20,7 +20,7 @@ qrcode.callback = res => {
     scanning = false;
 
     video.srcObject.getTracks().forEach(track => {
-        window.location.hash = res
+        window.location = "http://iiotreach-factory.com/inventory/item/form?uid="+res
       track.stop();
     });
 
